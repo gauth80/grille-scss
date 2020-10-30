@@ -1,0 +1,29 @@
+@import '_config.scss';
+
+//ne pas load le scss (non min)
+@import './css/grid.css';
+@import './css/color.css';
+@import './css/components.css';
+
+
+* {
+  box-sizing:border-box;
+}
+
+%taile {
+  font-size:1.5rem;
+}
+.teste2 {
+  background-color: #141414cc;
+  &+h3 {
+    text-decoration: underline;
+    color:skyblue;
+    display:inline-block;
+  }
+  & h3:last-child {
+    color:$ygreen;
+  }
+  & h3 {
+    @extend %taile;
+  }
+}

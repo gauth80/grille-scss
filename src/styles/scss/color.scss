@@ -1,0 +1,39 @@
+
+$darken: #333;
+$violet : #DB0A5B;
+$skyblue:#25AEEB;
+$yellowgreen:#7FFF35;
+
+//var color (Deutéranopie ~ Protanopie ~ Tritanopie)
+$snow:#F3F4CF;
+$blue:#27478c;
+$red:#871A1A;
+
+/*
+  @param(color + background-color)
+  hover && active
+  $snow + $red = AAA
+  $snow + $blue = AAA
+*/
+
+%success {
+  color:$snow;
+  background-color:darken($blue,5);
+  &:hover {
+    background-color:lighten($blue, 10);
+  }
+}
+%danger {
+  color:$snow;
+  background-color:darken($red,5);
+  &:hover {
+    background-color:lighten($red,10);
+  }
+}
+
+.text-imp {
+  color:$red;
+}
+.text-sec {
+  color:$blue;
+}

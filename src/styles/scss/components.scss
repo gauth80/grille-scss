@@ -1,0 +1,32 @@
+@import 'color.scss';
+
+@mixin prefix($props, $value, $prefixes: (webkit moz o ms) ) {
+  @each $prefixe in $prefixes {
+    #{'-'+$prefixe+'-'+$props}:$value;
+  }
+  #{$props}:$value;
+}
+
+%button {
+  border-radius:4px;
+  cursor:grab;
+  padding:8px;
+  text-transform:uppercase;
+  &:hover {
+    @include prefix(transform, scale(1.05),webkit moz o ms);
+  }
+  &:active {
+    @include prefix(box-shadow,inset 6px 6px 23px #14141466,ms);
+    @include prefix(transform, scale(1),webkit moz o ms);
+  }
+}
+
+
+.btn-success {
+  @extend %success;
+  @extend %button;
+}
+.btn-danger {
+  @extend %danger;
+  @extend %button;
+}
